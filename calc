@@ -8,6 +8,7 @@ var program = require('commander');
 
 program
   .version('0.0.1')
+  .option ('-a, --add', 'add numbers')
   .option('-p, --peppers', 'Add peppers')
   .option('-P, --pineapple', 'Add pineapple')
   .option('-b, --bbq', 'Add bbq sauce')
@@ -19,3 +20,14 @@ if (program.peppers) console.log('  - peppers');
 if (program.pineapple) console.log('  - pineapple');
 if (program.bbq) console.log('  - bbq');
 console.log('  - %s cheese', program.cheese);
+
+if (program.add) {
+	console.log('adding was requested');
+	var numbers = program.args;
+	var firstNumber = parseInt(numbers[0])	
+	var secondNumber = parseInt(numbers[1])
+	var sum = firstNumber + secondNumber;		
+	console.log('the numbers are: %d and %d', firstNumber, secondNumber);
+	console.log('the sum of %d and %d is %d', firstNumber, secondNumber, sum);
+
+}
